@@ -54,6 +54,7 @@ def main(steam_common, steam_vault):
 
         log_file.write("{},{}\n".format(full_path, desired_path))
 
+        print("Fixing: '{}' -> '{}'".format(full_path, desired_path))
         win32file.RemoveDirectory(full_path)
         win32file.CreateSymbolicLink(full_path, desired_path, 0x1 | 0x2)
 
